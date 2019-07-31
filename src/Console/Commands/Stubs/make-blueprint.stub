@@ -1,0 +1,13 @@
+<?php
+
+namespace DummyNamespace;
+
+use LGrevelink\SimpleJWT\TokenBlueprint;
+
+/**
+ * Generated via the artisan make:jwt-blueprint command.
+ */
+class DummyClass extends TokenBlueprint
+{
+    protected static $dummyProperty;
+}

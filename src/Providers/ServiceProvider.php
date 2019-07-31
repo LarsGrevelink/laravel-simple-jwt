@@ -3,6 +3,7 @@
 namespace LGrevelink\LaravelSimpleJWT\Providers;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use LGrevelink\LaravelSimpleJWT\Console\Commands\MakeBlueprint;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -11,6 +12,11 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                MakeBlueprint::class,
+            ]);
+        }
     }
 
     /**

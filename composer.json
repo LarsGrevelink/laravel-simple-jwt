@@ -9,6 +9,7 @@
     ],
     "require": {
         "php": ">=7.1",
+        "illuminate/support": "5.7.*|5.8.*",
         "lgrevelink/php-simple-jwt": "0.*"
     },
     "require-dev": {
