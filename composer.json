@@ -1,0 +1,38 @@
+{
+    "name": "lgrevelink/laravel-simple-jwt",
+    "description": "Utilties for using the php-simple-jwt package in Laravel/Lumen projects.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lars Grevelink"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "lgrevelink/php-simple-jwt": "0.*"
+    },
+    "require-dev": {
+        "laravel/framework": "5.7.*|5.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LGrevelink\\LaravelSimpleJWT\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always --do-not-cache-result"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LGrevelink\\LaravelSimpleJWT\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
