@@ -3,6 +3,7 @@
 namespace LGrevelink\LaravelSimpleJWT\Validation\Rule;
 
 use Illuminate\Contracts\Validation\Rule;
+use LGrevelink\LaravelSimpleJWT\Exceptions\Validation\InvalidBlueprintException;
 use LGrevelink\SimpleJWT\Exceptions\InvalidFormatException;
 use LGrevelink\SimpleJWT\Token;
 use LGrevelink\SimpleJWT\TokenBlueprint;
@@ -23,6 +24,18 @@ class ValidJWT implements Rule
      */
     public function __construct(?string $blueprint = null)
     {
+        if ($blueprint === null) {
+            return;
+        }
+
+        if (!class_exists($blueprint)) {
+            throw new InvalidBlueprintException('Blueprint class could not be found');
+        }
+
+        if (!is_subclass_of($blueprint, TokenBlueprint::class)) {
+            throw new InvalidBlueprintException('Blueprint class is not a TokenBlueprint class');
+        }
+
         $this->blueprint = $blueprint;
     }
 
@@ -40,14 +53,6 @@ class ValidJWT implements Rule
 
             if ($this->blueprint === null) {
                 return true;
-            }
-
-            if (!class_exists($this->blueprint)) {
-                return false;
-            }
-
-            if (!($this->blueprint instanceof TokenBlueprint)) {
-                return false;
             }
 
             return $this->blueprint::validate($token);
