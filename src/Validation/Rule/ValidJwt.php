@@ -8,7 +8,7 @@ use LGrevelink\SimpleJWT\Exceptions\InvalidFormatException;
 use LGrevelink\SimpleJWT\Token;
 use LGrevelink\SimpleJWT\TokenBlueprint;
 
-class ValidJWT implements Rule
+class ValidJwt implements Rule
 {
     /**
      * Class name of the blueprint we want to validate against.
