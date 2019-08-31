@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LGrevelink\\LaravelSimpleJWT\\Providers\\ServiceProvider"
+                "LGrevelink\\LaravelSimpleJWT\\Providers\\SimpleJwtServiceProvider"
             ]
         }
     }
