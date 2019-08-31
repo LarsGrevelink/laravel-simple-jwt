@@ -88,18 +88,18 @@ TEMPLATE;
                 sprintf('Value for the %s claim?', Str::snake($property->getName(), ' '))
             );
 
-            if ($value !== null) {
-                if ($type === 'int') {
-                    $value = (int) $value;
-                } elseif ($type === 'bool') {
-                    $value = (bool) $value;
-                } elseif ($type === 'float') {
-                    $value = (float) $value;
-                }
-
-                // Store the property for adding to the stub
-                $classContents[] = sprintf(self::PROPERTY_TEMPLATE, $propertyName, var_export($value, true));
+            if ($value === null) {
+                continue;
             }
+
+            if ($type !== 'mixed') {
+                if (!settype($value, $type)) {
+                    continue;
+                }
+            }
+
+            // Store the property for adding to the stub
+            $classContents[] = sprintf(self::PROPERTY_TEMPLATE, $propertyName, var_export($value, true));
         }
 
         return str_replace(
