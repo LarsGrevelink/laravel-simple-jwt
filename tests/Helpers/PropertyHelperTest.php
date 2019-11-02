@@ -20,7 +20,7 @@ class PropertyHelperTest extends TestCase
      *
      * @var string
      */
-    protected $propertyWithDoc = 'without docs';
+    protected $propertyWithDoc = 'with docs';
 
     /**
      * This is a property with a description which is separated over two lines
@@ -28,7 +28,7 @@ class PropertyHelperTest extends TestCase
      *
      * @var string
      */
-    protected $propertyWithMultilineDoc = 'without docs';
+    protected $propertyWithMultilineDoc = 'with multiline docs';
 
     public function testGetContextWithoutDoc()
     {
