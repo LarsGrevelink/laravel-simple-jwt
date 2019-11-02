@@ -20,7 +20,9 @@ class ValidJwt implements Rule
     /**
      * Constructor.
      *
-     * @param ?string $blueprint Token blueprint to validate against (optional)
+     * @param string $blueprint Token blueprint to validate against (optional)
+     *
+     * @throws InvalidBlueprintException
      */
     public function __construct(?string $blueprint = null)
     {

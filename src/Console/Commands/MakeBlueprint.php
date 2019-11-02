@@ -66,8 +66,6 @@ TEMPLATE;
      *
      * @param string $name
      *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
-     *
      * @return string
      */
     protected function buildClass($name)
