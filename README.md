@@ -1,5 +1,10 @@
 # Laravel Simple JWT
 
+[![Test Suite Status](https://github.com/larsgrevelink/laravel-simple-jwt/workflows/Test%20Suite/badge.svg)](https://github.com/larsgrevelink/laravel-simple-jwt)
+[![Total Downloads](https://poser.pugx.org/lgrevelink/laravel-simple-jwt/d/total.svg)](https://packagist.org/packages/lgrevelink/laravel-simple-jwt)
+[![Latest Stable Version](https://poser.pugx.org/lgrevelink/laravel-simple-jwt/v/stable.svg)](https://packagist.org/packages/lgrevelink/laravel-simple-jwt)
+[![License](https://poser.pugx.org/lgrevelink/laravel-simple-jwt/license.svg)](https://github.com/larsgrevelink/laravel-simple-jwt)
+
 Laravel and Lumen utilities to kickstart the usage of the [PHP Simple JWT](https://github.com/LarsGrevelink/php-simple-jwt) package.
 
 Supported functionalities;
